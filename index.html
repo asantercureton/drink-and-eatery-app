@@ -1,13 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drinks and Eatery App</title>
+    <!-- LINK TO CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- LINK TO CSS FRAMEWORK -->
+    <!-- LINK TO FOOD RECIPE API -->
+    <!-- LINK TO COCKTAIL API -->
 </head>
+
 <body>
-    <main></main>
-    <footer></footer>
+    <header>
+        <h1>Drinks and Eatery App</h1>
+    </header>
+    <!-- DISPLAY FOOD CHOICES (API) -->
+    <div id="food-container">
+        <h2>Delicious Food Choices</h2>
+        <div id="food-container-content">
+            <form id="food-form">
+                <!-- FOOD OPTIONS TO SELECT -->
+                <select id="food-choices">
+                    <option value="beef">Beef</option>
+                    <option value="chicken">Chicken</option>
+                    <option value="shrimp">Shrimp</option>
+                </select>
+                <!-- FOOD BUTTON -->
+                <button type="submit" id="drink-btn">My Food</button>
+            </form>
+        </div>
+    </div>
+    <!-- DISPLAY DRINK CHOICES (API) -->
+    <div id="drink-container">
+        <h2>Tasty Drink Choices</h2>
+        <div id="drink-container-content">
+            <form id="drink-form">
+                <!-- DRINK OPTIONS TO SELECT -->
+                <select id="drink-choices">
+                    <option value="rum">Rum</option>
+                    <option value="gin">Gin</option>
+                    <option value="tequila">Tequila</option>
+                    <option value="brandy">Brandy</option>
+                    <option value="cognac">Cognac</option>
+                    <option value="vodka">Vodka</option>
+                </select>
+                <!-- DRINK BUTTON -->
+                <button type="submit" id="drink-btn">Tasty Drink</button>
+            </form>
+        </div>
+    </div>
+    <!-- DISPLAY AREA FOR IMAGES AND RECIPES -->
+    <div id="image-displays">
+        <!-- FOOD DISPLAY AREA -->
+        <div id="food-display-container">
+            <div id="food-img">
+                <!-- FOOD IMAGE -->
+                <img src="" />
+            </div>
+            <div>
+                <!-- FOOD RECIPE -->
+                <p id="food-recipe"></p>
+            </div>
+        </div>
+        <!-- DRINK DISPLAY AREA -->
+        <div id="drink-display-container">
+            <div id="drink-img">
+                <!-- DRINK IMAGE -->
+                <img src="" />
+            </div>
+            <div>
+                <!-- DRINK RECIPE -->
+                <p id="drink-recipe"></p>
+            </div>
+        </div>
+    </div>
+    <!-- LINK TO JAVASCRIPT -->
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
