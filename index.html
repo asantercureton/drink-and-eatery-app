@@ -5,17 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Drinks and Eatery App</title>
     <!-- LINK TO CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    
     <!-- LINK TO FOOD RECIPE API -->
     <!-- LINK TO COCKTAIL API -->
 </head>
 
 <body>
+
     <h1 class="display">Drinks and Eatery</h1>
    </div>
    <div class="container">
@@ -42,6 +46,55 @@
                   <input id="siteSearch" type="search" placeholder="Search"></input>
                   <!--"get recipe"-->
                 <input type="button" id="save_value" name="save_value" value="Get Recipe" />
+
+    <header>
+        <h1>Drinks & Eatery App</h1>
+    </header>
+    <!-- DISPLAY FOOD CHOICES (API) -->
+    <div id="food-container">
+        <h2>Delicious Food Choices</h2>
+        <div id="food-container-content">
+            <form id="food-form">
+                <!-- FOOD SEARCH BAR -->
+                <div id="food-search">Food Search</div>
+              
+                <!-- FOOD BUTTON -->
+                <button type="submit" id="drink-btn">My Food</button>
+            </form>
+        </div>
+    </div>
+    <!-- DISPLAY DRINK CHOICES (API) -->
+    <div id="drink-container">
+        <h2>Tasty Drink Choices</h2>
+        <div id="drink-container-content">
+            <form id="drink-form">
+                <!-- DRINK OPTIONS TO SELECT -->
+                <div id="drink-search">Drink Search</div>
+               
+                <!-- DRINK BUTTON -->
+                <button type="submit" id="drink-btn">Tasty Drink</button>
+            </form>
+        </div>
+    </div>
+    <!-- DISPLAY AREA FOR IMAGES AND RECIPES -->
+    <div id="image-displays">
+        <!-- FOOD DISPLAY AREA -->
+        <div id="food-display-container">
+            <div id="food-img">
+                <!-- FOOD IMAGE -->
+                <img src="" />
+            </div>
+            <div>
+                <!-- FOOD RECIPE -->
+                <p id="food-recipe"></p>
+            </div>
+        </div>
+        <!-- DRINK DISPLAY AREA -->
+        <div id="drink-display-container">
+            <div id="drink-img">
+                <!-- DRINK IMAGE -->
+                <img src="" />
+
             </div>
 
             
