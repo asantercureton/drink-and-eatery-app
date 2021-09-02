@@ -2,106 +2,109 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Drinks and Eatery App</title>
-    <!-- LINK TO CSS -->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <!--Import materialize.css-->
-    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
-    
-    
-    <link rel="stylesheet" href="./assets/css/style.css"/>
-    <!-- LINK TO FOOD RECIPE API -->
-    <!-- LINK TO COCKTAIL API -->
+  <title>Drinks and Eatery App</title>
+  <!-- LINK TO CSS -->
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <!--Import materialize.css-->
+  <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- LINK TO FOOD RECIPE API -->
+  <!-- LINK TO COCKTAIL API -->
 </head>
 
 <body>
 
-    <h1 class="display">Drinks and Eatery</h1>
-   </div>
-   <div class="container">
-        <div class="row" >
+  <h1 class="display">Drinks and Eatery</h1>
+  <div class="container">
+    <div class="row">
 
-          <!--Food buttons-->
-            <div class = "col-lg-5 " id="foodborder"><h3 class="selections">Food</h3>
-                <input name="select" id="checkbox1" class="ads_Checkbox" type="radio" value="chinese" />
-                <label class="form-check-label">Chinese</label>
-                  <br>
-                <input name="select" id="checkbox2" class="ads_Checkbox" type="radio" value="indian" />
-                <label class="form-check-label">Indian</label>
-                  <br>
-                <input name="select" id="checkbox3" class="ads_Checkbox" type="radio" value="mexican" />
-                <label class="form-check-label">Mexican</label>
-                  <br>
-                <input name="select" id="checkbox4" class="ads_Checkbox" type="radio" value="italian" />
-                <label class="form-check-label">Italian</label>
-                  <br>
-                <input name="select" id="checkbox5" class="ads_Checkbox" type="radio" value="american" />
-                <label class="form-check-label">American</label>
-                  <br>
-                  <br>
-                  <input id="siteSearch" type="search" placeholder="Search"></input>
-                  <!--"get recipe"-->
-                <input type="button" id="save_value" name="save_value" value="Get Recipe" />
+      <!--Food buttons-->
+      <div class="col-lg-5 " id="foodborder">
+        <h3 class="selections">Delicious Food Options</h3>
+        <input name="select" id="checkbox1" class="ads_Checkbox" type="radio" value="chinese" />
+        <label class="form-check-label">Chinese</label>
+        <br>
+        <input name="select" id="checkbox2" class="ads_Checkbox" type="radio" value="indian" />
+        <label class="form-check-label">Indian</label>
+        <br>
+        <input name="select" id="checkbox3" class="ads_Checkbox" type="radio" value="mexican" />
+        <label class="form-check-label">Mexican</label>
+        <br>
+        <input name="select" id="checkbox4" class="ads_Checkbox" type="radio" value="italian" />
+        <label class="form-check-label">Italian</label>
+        <br>
+        <input name="select" id="checkbox5" class="ads_Checkbox" type="radio" value="american" />
+        <label class="form-check-label">American</label>
+        <br>
+        <br>
+        <input id="siteSearch" type="search" placeholder="Search Ingredients"></input>
+        <!--"get recipe"-->
+        <input type="button" id="save_value" name="save_value" value="Get Recipe" />
+      </div>
 
-   
-    <!-- DISPLAY DRINK CHOICES (API) -->
-    <div id="drink-container">
-        <h2>Tasty Drink Choices</h2>
-        
-        <div id="drink-container-content">
-            <form id="drink-form">
-                <!-- DRINK OPTIONS TO SELECT -->
-                <input id="drink-search" placeholder="Search Ingredient"/>
-               
-                <!-- DRINK BUTTON -->
-                <button type="submit" id="drink-btn">Tasty Drink</button>
-            </form>
+      <!--Drink buttons-->
+      <div class="col-lg-5 " id="foodborder">
+        <h3 class="selections">Tasty Drink Choices</h3>
+        <input name="select" id="checkbox1" class="ads_Checkbox" type="radio" value="chinese" />
+        <label class="form-check-label">Gin</label>
+        <br>
+        <input name="select" id="checkbox2" class="ads_Checkbox" type="radio" value="indian" />
+        <label class="form-check-label">Tequila</label>
+        <br>
+        <input name="select" id="checkbox3" class="ads_Checkbox" type="radio" value="mexican" />
+        <label class="form-check-label">Vodka</label>
+        <br>
+        <input name="select" id="checkbox4" class="ads_Checkbox" type="radio" value="italian" />
+        <label class="form-check-label">Cognac</label>
+        <br>
+        <input name="select" id="checkbox5" class="ads_Checkbox" type="radio" value="american" />
+        <label class="form-check-label">Whiskey</label>
+        <br>
+        <br>
+        <input id="drinkSearch" type="search" placeholder="Search Ingredients"></input>
+        <!--"get drink"-->
+        <input type="button" id="drink-btn" name="drink-btn" value="Get Drink" />
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-5" id="card">
+          <!--Recipe card displaying link to recipe-->
+          <div class="card remove">
+            <img src="" class="card-img-top" alt="Food">
+            <div class="card-body">
+              <h5 class="card-title">card</h5>
+              <p class="card-text"></p>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-5" id="card">
+          <!--Drink card displaying link to drink-->
+          <div class="card remove">
+            <img src="" class="card-img-top" alt="Drink">
+            <div class="card-body">
+              <h5 class="card-title">card</h5>
+              <p class="card-text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Linking jquery and script file-->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="assets/js/script.js"></script>
+      <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
     </div>
-    <!-- DISPLAY AREA FOR IMAGES AND RECIPES -->
-    <div id="image-displays">
-        <!-- FOOD DISPLAY AREA -->
-        <div id="food-display-container">
-            <div id="food-img">
-                <!-- FOOD IMAGE -->
-                <img src="" />
-            </div>
-            <div>
-                <!-- FOOD RECIPE -->
-                <p id="food-recipe"></p>
-            </div>
-        </div>
-        <!-- DRINK DISPLAY AREA -->
-        <div id="drink-display-container">
-            <div id="drink-img">
-                <!-- DRINK IMAGE -->
-                <img src="" />
-
-            </div>
-
-            
-
-        <div class="row">
-            <div class="col-lg-5" id="card">
-              <!--Recipe card displaying link to recipe-->
-                <div class="card remove">
-                        <img src="" class="card-img-top" alt="Food">
-                        <div class="card-body">
-                        <h5 class="card-title">card</h5>
-                        <p class="card-text"></p>
-                        </div>
-                </div>
-            </div>
-
-            
-    <!--Linking jquery and script file-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="assets/js/script.js"></script>
-    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+  </div>
 </body>
 </body>
 

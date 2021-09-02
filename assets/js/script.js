@@ -1,23 +1,22 @@
 var id = "c1209f71"
 var key = "bfada42bc6c1d17e1c160975a2313f78"
 var inputVal = []
+// var drinkQuery = "www.thecocktaildb.com/api/json/v1/1/search.php?i=" + ("
 console.log(inputVal)
 
 //Food recipe function//
 function getRecipe() {
     //Getting the value of the user specified food selection//
-    var cuisineSelection = $("input[name=select]:checked").val();
-    var querySelection = $("input[type=search").val();
-console.log(cuisineSelection);
-    //"rice,chinese,steak" search.val() + "," + foodSelection
+    var foodSelection = $("input[name=select]:checked").val();
+
     //Recipe URL with cuisine selection API//
-    var queryURLrec = "https://api.edamam.com/api/recipes/v2?type=public&q=" + querySelection + "&app_id=" + id + "&app_key=" + key + "&ingr=5-10";
+    var queryURLrec = "https://api.edamam.com/search?q=" + foodSelection + "&app_id=" + id + "&app_key=" + key + "&from=0&to=50";
 
     //AJAX getting recipe ingredient list//
     $.ajax({
         type: "get",
         url: queryURLrec,
-    }).then(function (response) {
+    }).then(function(response) {
         console.log(queryURLrec);
         console.log(response);
 
@@ -26,7 +25,7 @@ console.log(cuisineSelection);
 
         //Add styling for food card//
 
-
+        
         //Randomizing the food recipes //
         var randFood = Math.floor((Math.random() * response.hits.length));
         console.log(response.hits.length);
@@ -38,7 +37,7 @@ console.log(cuisineSelection);
         $(".card-text").append(list)
 
         //For loop ingredient list and appending the card//
-        for (var i = 0; i < response.hits[randFood].recipe.ingredientLines.length; i++) {
+        for (var i=0; i< response.hits[randFood].recipe.ingredientLines.length; i++) {
             var item = $("<li>")
             item.html(response.hits[randFood].recipe.ingredientLines[i]);
             list.append(item)
@@ -51,32 +50,35 @@ console.log(cuisineSelection);
     });
 }
 
+getDrink() {
+    //Getting the value of the user specified drink selection//
+    var drinkSelection = $("input[name=select]:checked").val();
 
-function getDrink() {
-    event.preventDefault();
-    
-    var drinkSelection = $("#drink-search").val();
-    console.log("DRINK", drinkSelection);
-    var drinkQuery = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=" + drinkSelection;
+    //Recipe URL with cuisine selection API//
+    var queryURLrec = "https://api.edamam.com/search?q=" + foodSelection + "&app_id=" + id + "&app_key=" + key + "&from=0&to=50";
 
+    //AJAX getting recipe ingredient list//
     $.ajax({
         type: "get",
-        url: drinkQuery,
-    }).then(function (response) {
+        url: queryURLrec,
+    }).then(function(response) {
+        console.log(queryURLrec);
         console.log(response);
-    })
+
+        //Displaying recipe card//
+        $(".card").attr("class", "card");
 }
 
-
 //Function "Get Recipe" button//
-
-$('#save_value').click(function () {
-    getRecipe();
-});
-
+$(function(){
+    $('#save_value').click(function(){
+        getRecipe();
+    });
+  });
 //Function "Get Cocktail" button//
-$('#drink-btn').click(function () {
-    getDrink();
-});
-
+  $(function(){
+    $('#save_drink').click(function(){
+        getDrink();
+    });
+  });
 
