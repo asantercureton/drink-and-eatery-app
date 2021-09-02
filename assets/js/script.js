@@ -32,9 +32,13 @@ function getRecipe() {
         // var randFood = Math.floor((Math.random() * response.hits.length));
         for (var a = 0; a < response.hits.length; a++) {
             console.log("RAND FOOD", response.hits[a]);
-            var showFood = $("<div>").text(response.hits[a].recipe.label);
-            $(".foodshow").append(showFood);
-            
+            var showFoodTitle = $("<h2>").text(response.hits[a].recipe.label);
+            var showFoodImg = $("<img>").attr("src", response.hits[a].recipe.image);
+            var showFoodIng = $("<p>").text(response.hits[a].recipe.ingredientLines);
+            $(".foodshow").append(showFoodTitle, showFoodImg, showFoodIng);
+            // $(".foodshow").append(showFoodImg);
+
+
 
             //Getting recipe title on the page and appending the card//
             $(".card-title").html(response.hits[a].recipe.label);
@@ -80,27 +84,34 @@ function getDrink() {
         // Displaying recipe card
         $(".card").attr("class", "card");
 
-        // Randomizing the food recipes
-        var randDrink = Math.floor((Math.random() * response.drinks.length));
-        console.log("RAND DRINK", response.drinks.length);
+        for (var d = 0; d < response.drinks.length; d++) {
+            console.log("RAND DRINK", response.drinks[d]);
+            var showDrinkTitle = $("<div>").text(response.drinks[a].strDrink);
+            // var showFoodImg = $("<div>").attr("src", response.hits[a]);
+            $(".drinkshow").append(showDrinkTitle);
+            // $(".foodshow").append(showFoodImg);
+            // Randomizing the food recipes
+            // var randDrink = Math.floor((Math.random() * response.drinks.length));
+            // console.log("RAND DRINK", response.drinks.length);
 
-        // Getting drink title on the page and appending the card
-        $(".card-title").html(response.drinks[randDrink].strDrink);
-        $(".card-text").empty();
-        var list = $("<ul>")
-        $(".card-text").append(list)
+            // // Getting drink title on the page and appending the card
+            // $(".card-title").html(response.drinks[randDrink].strDrink);
+            // $(".card-text").empty();
+            // var list = $("<ul>")
+            // $(".card-text").append(list)
 
-        // For loop ingredient list and appending the card//
-        for (var i = 0; i < 1; i++) {
-            var item = $("<li>")
-            item.html(response.drinks[i].strInstructions);
-            list.append(item);
+            // // For loop ingredient list and appending the card//
+            // for (var i = 0; i < 1; i++) {
+            //     var item = $("<li>")
+            //     item.html(response.drinks[i].strInstructions);
+            //     list.append(item);
+            // }
+
+            // // // // //Getting link to the drink instructions//
+            // $(".card-img-top").attr("src", response.drinks[randDrink].strDrinkThumb);
+            // // $("recipieLink").html(response.drinks[randDrink].strInstructions);
+            // $(".card").css("border", "1px solid black");
         }
-
-        // // // //Getting link to the drink instructions//
-        $(".card-img-top").attr("src", response.drinks[randDrink].strDrinkThumb);
-        // $("recipieLink").html(response.drinks[randDrink].strInstructions);
-        $(".card").css("border", "1px solid black");
     });
 
 }
