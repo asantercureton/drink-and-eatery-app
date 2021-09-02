@@ -6,10 +6,12 @@ console.log(inputVal)
 //Food recipe function//
 function getRecipe() {
     //Getting the value of the user specified food selection//
-    var foodSelection = $("input[name=select]:checked").val();
-
+    var cuisineSelection = $("input[name=select]:checked").val();
+    var querySelection = $("input[type=search").val();
+console.log(cuisineSelection);
+    //"rice,chinese,steak" search.val() + "," + foodSelection
     //Recipe URL with cuisine selection API//
-    var queryURLrec = "https://api.edamam.com/search?q=" + foodSelection + "&app_id=" + id + "&app_key=" + key + "&from=0&to=50";
+    var queryURLrec = "https://api.edamam.com/api/recipes/v2?type=public&q=" + querySelection + "&app_id=" + id + "&app_key=" + key + "&ingr=5-10";
 
     //AJAX getting recipe ingredient list//
     $.ajax({
