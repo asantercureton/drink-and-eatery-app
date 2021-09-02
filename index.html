@@ -5,13 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drinks & Eatery App</title>
-    <!-- LINK TO CSS FRAMEWORK -->
+
+    <title>Drinks and Eatery App</title>
+    <!-- LINK TO CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    
     <!-- LINK TO FOOD RECIPE API -->
     <!-- LINK TO COCKTAIL API -->
 </head>
 
 <body>
+
+    <h1 class="display">Drinks and Eatery</h1>
+   </div>
+   <div class="container">
+        <div class="row" >
+
+          <!--Food buttons-->
+            <div class = "col-lg-5 " id="foodborder"><h3 class="selections">Food</h3>
+                <input name="select" id="checkbox1" class="ads_Checkbox" type="radio" value="chinese" />
+                <label class="form-check-label">Chinese</label>
+                  <br>
+                <input name="select" id="checkbox2" class="ads_Checkbox" type="radio" value="indian" />
+                <label class="form-check-label">Indian</label>
+                  <br>
+                <input name="select" id="checkbox3" class="ads_Checkbox" type="radio" value="mexican" />
+                <label class="form-check-label">Mexican</label>
+                  <br>
+                <input name="select" id="checkbox4" class="ads_Checkbox" type="radio" value="italian" />
+                <label class="form-check-label">Italian</label>
+                  <br>
+                <input name="select" id="checkbox5" class="ads_Checkbox" type="radio" value="american" />
+                <label class="form-check-label">American</label>
+                  <br>
+                  <br>
+                  <input id="siteSearch" type="search" placeholder="Search"></input>
+                  <!--"get recipe"-->
+                <input type="button" id="save_value" name="save_value" value="Get Recipe" />
+
     <header>
         <h1>Drinks & Eatery App</h1>
     </header>
@@ -59,15 +94,29 @@
             <div id="drink-img">
                 <!-- DRINK IMAGE -->
                 <img src="" />
+
             </div>
-            <div>
-                <!-- DRINK RECIPE -->
-                <p id="drink-recipe"></p>
+
+            
+
+        <div class="row">
+            <div class="col-lg-5" id="card">
+              <!--Recipe card displaying link to recipe-->
+                <div class="card remove">
+                        <img src="..." class="card-img-top" alt="Food">
+                        <div class="card-body">
+                        <h5 class="card-title">card</h5>
+                        <p class="card-text"></p>
+                        </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <!-- LINK TO JAVASCRIPT -->
-    <script src="./assets/js/script.js"></script>
+
+            
+    <!--Linking jquery and script file-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/javascript/script.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
 </body>
 
 </html>
