@@ -1,7 +1,6 @@
 var id = "c1209f71"
 var key = "bfada42bc6c1d17e1c160975a2313f78"
 var inputVal = []
-// var drinkQuery = "www.thecocktaildb.com/api/json/v1/1/search.php?i=" + ("
 console.log(inputVal)
 
 //Food recipe function//
@@ -16,7 +15,7 @@ function getRecipe() {
     $.ajax({
         type: "get",
         url: queryURLrec,
-    }).then(function(response) {
+    }).then(function (response) {
         console.log(queryURLrec);
         console.log(response);
 
@@ -25,7 +24,7 @@ function getRecipe() {
 
         //Add styling for food card//
 
-        
+
         //Randomizing the food recipes //
         var randFood = Math.floor((Math.random() * response.hits.length));
         console.log(response.hits.length);
@@ -37,7 +36,7 @@ function getRecipe() {
         $(".card-text").append(list)
 
         //For loop ingredient list and appending the card//
-        for (var i=0; i< response.hits[randFood].recipe.ingredientLines.length; i++) {
+        for (var i = 0; i < response.hits[randFood].recipe.ingredientLines.length; i++) {
             var item = $("<li>")
             item.html(response.hits[randFood].recipe.ingredientLines[i]);
             list.append(item)
@@ -50,16 +49,32 @@ function getRecipe() {
     });
 }
 
+
+function getDrink() {
+    event.preventDefault();
+    
+    var drinkSelection = $("#drink-search").val();
+    console.log("DRINK", drinkSelection);
+    var drinkQuery = "www.thecocktaildb.com/api/json/v1/1/search.php?i=" + drinkSelection;
+
+    $.ajax({
+        type: "get",
+        url: drinkQuery,
+    }).then(function (response) {
+        console.log(response);
+    })
+}
+
+
 //Function "Get Recipe" button//
-$(function(){
-    $('#save_value').click(function(){
-        getRecipe();
-    });
-  });
+
+$('#save_value').click(function () {
+    getRecipe();
+});
+
 //Function "Get Cocktail" button//
-  $(function(){
-    $('#save_drink').click(function(){
-        getDrink();
-    });
-  });
+$('#drink-btn').click(function () {
+    getDrink();
+});
+
 
