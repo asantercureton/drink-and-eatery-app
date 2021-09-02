@@ -78,5 +78,3 @@ $('#save_value').click(function () {
 $('#drink-btn').click(function () {
     getDrink();
 });
-
-
