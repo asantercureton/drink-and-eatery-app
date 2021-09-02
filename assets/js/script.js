@@ -55,7 +55,7 @@ function getDrink() {
     
     var drinkSelection = $("#drink-search").val();
     console.log("DRINK", drinkSelection);
-    var drinkQuery = "www.thecocktaildb.com/api/json/v1/1/search.php?i=" + drinkSelection;
+    var drinkQuery = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=" + drinkSelection;
 
     $.ajax({
         type: "get",
