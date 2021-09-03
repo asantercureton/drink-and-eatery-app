@@ -44,6 +44,12 @@ function getRecipe() {
             // Append food content
             $(".foodshow").append(showFoodTitle, showFoodImage, showFoodYield, showFoodIng);
 
+             // Set past food searches to localStorage
+             var pastFood = JSON.stringify(queryURLrec);
+             localStorage.setItem("PastFood", pastFood);
+             console.log("locStor Food",localStorage);
+
+             // NEXT: Append food localStorage to html
 
             //Getting recipe title on the page and appending the card//
             $(".card-title").html(response.hits[a].recipe.label);
@@ -104,6 +110,14 @@ function getDrink() {
 
             // Appending the data to html
             $(".drinkshow").append(showDrinkTitle, showDrinkImage, showDrinkIngred1, showDrinkIngred2, showDrinkIngred3, showDrinkIngred4, showDrinkIngred5, showDrinkInstr);
+
+            // Set past drink searches to localStorage
+            var pastDrink = JSON.stringify(drinkQuery);
+            localStorage.setItem("PastDrink", pastDrink);
+            console.log("locStor Drink",localStorage);
+
+            // NEXT: Append drink localStorage to html
+
         }
     });
 
