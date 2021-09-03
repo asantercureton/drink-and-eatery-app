@@ -1,0 +1,12 @@
+body, html {
+    height: 100%;
+    max-width: 900px;
+}
+
+.hero-image {
+    background-image: url(../images/foodAndDrink.jpg);
+}
+.display {
+    font-family: 'Zilla Slab Highlight', 'cursive';
+    text-align: center;
+}
