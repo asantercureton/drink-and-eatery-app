@@ -77,7 +77,7 @@ function getDrink() {
     event.preventDefault();
 
     //Getting the value of the user specified drink selection//
-    var drinkSelection = $("input[name=select]:checked").val();
+    // var drinkSelection = $("input[name=select]:checked").val();
     var inputSelection = $("#drinkSearch").val();
     console.log("SEARCH", inputSelection);
     // console.log("DRINK", drinkSelection);
@@ -117,7 +117,7 @@ function getDrink() {
             console.log("locStor Drink",localStorage);
 
             // NEXT: Append drink localStorage to html
-
+            
         }
     });
 
