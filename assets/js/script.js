@@ -11,7 +11,7 @@ function getRecipe() {
     console.log(cuisineSelection);
     //"rice,chinese,steak" search.val() + "," + foodSelection
     //Recipe URL with cuisine selection API//
-    var queryURLrec = "https://api.edamam.com/api/recipes/v2?type=public&q=" + querySelection + "&app_id=" + id + "&app_key=" + key;
+    var queryURLrec = "https://api.edamam.com/api/recipes/v2?type=public&q=" + querySelection + "&app_id=" + id + "&app_key=" + key + "&cuisineType=" + cuisineSelection;
 
     //AJAX getting recipe ingredient list//
     $.ajax({
@@ -71,7 +71,6 @@ function getDrink() {
     event.preventDefault();
 
     //Getting the value of the user specified drink selection//
-    var drinkSelection = $("input[name=select]:checked").val();
     var inputSelection = $("#drinkSearch").val();
     console.log("SEARCH", inputSelection);
     // console.log("DRINK", drinkSelection);
