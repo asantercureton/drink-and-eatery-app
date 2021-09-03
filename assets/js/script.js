@@ -8,10 +8,10 @@ function getRecipe() {
     //Getting the value of the user specified food selection//
     var cuisineSelection = $("input[name=select]:checked").val();
     var querySelection = $("input[type=search").val();
-console.log(cuisineSelection);
+    console.log(cuisineSelection);
     //"rice,chinese,steak" search.val() + "," + foodSelection
     //Recipe URL with cuisine selection API//
-    var queryURLrec = "https://api.edamam.com/api/recipes/v2?type=public&q=" + querySelection + "&app_id=" + id + "&app_key=" + key + "&ingr=5-10";
+    var queryURLrec = "https://api.edamam.com/api/recipes/v2?type=public&q=" + querySelection + "&app_id=" + id + "&app_key=" + key;
 
     //AJAX getting recipe ingredient list//
     $.ajax({
@@ -28,43 +28,85 @@ console.log(cuisineSelection);
 
 
         //Randomizing the food recipes //
-        var randFood = Math.floor((Math.random() * response.hits.length));
-        console.log(response.hits.length);
 
-        //Getting recipe title on the page and appending the card//
-        $(".card-title").html(response.hits[randFood].recipe.label);
-        $(".card-text").empty();
-        var list = $("<ul>")
-        $(".card-text").append(list)
+        // var randFood = Math.floor((Math.random() * response.hits.length));
+        for (var a = 0; a < response.hits.length; a++) {
+            console.log("RAND FOOD", response.hits[a]);
+            var showFoodTitle = $("<h2>").text(response.hits[a].recipe.label);
+            var showFoodImage = $("<img>").attr("src", response.hits[a].recipe.image);
+            var showFoodIng = $("<p>").text(response.hits[a].recipe.ingredientLines);
+            // If yield is more than 1, SERVINGS - else SERVING
+            if (response.hits[a].recipe.yield > 1){
+                var showFoodYield = $("<p>").text(response.hits[a].recipe.yield + " Servings");
+            } else {
+                var showFoodYield = $("<p>").text(response.hits[a].recipe.yield + " Serving");
+            }
+            // Append food content
+            $(".foodshow").append(showFoodTitle, showFoodImage, showFoodYield, showFoodIng);
 
-        //For loop ingredient list and appending the card//
-        for (var i = 0; i < response.hits[randFood].recipe.ingredientLines.length; i++) {
-            var item = $("<li>")
-            item.html(response.hits[randFood].recipe.ingredientLines[i]);
-            list.append(item)
+
+            //Getting recipe title on the page and appending the card//
+            $(".card-title").html(response.hits[a].recipe.label);
+            $(".card-text").empty();
+            var list = $("<ul>")
+            $(".card-text").append(list)
+
+            //For loop ingredient list and appending the card//
+            for (var i = 0; i < response.hits[a].recipe.ingredientLines.length; i++) {
+                var item = $("<li>")
+                item.html(response.hits[a].recipe.ingredientLines[i]);
+                list.append(item)
+            }
+
+            //Getting link to the actual recipe//
+            $(".card-img-top").attr("src", response.hits[a].recipe.image);
+            $("#recipieLink").attr("href", response.hits[a].recipe.url);
+            $(".card").css("border", "1px solid black");
         }
-
-        //Getting link to the actual recipe//
-        $(".card-img-top").attr("src", response.hits[randFood].recipe.image);
-        $("#recipieLink").attr("href", response.hits[randFood].recipe.url);
-        $(".card").css("border", "1px solid black");
     });
 }
 
 
 function getDrink() {
     event.preventDefault();
-    
-    var drinkSelection = $("#drink-search").val();
-    console.log("DRINK", drinkSelection);
-    var drinkQuery = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=" + drinkSelection;
+
+    //Getting the value of the user specified drink selection//
+    var drinkSelection = $("input[name=select]:checked").val();
+    var inputSelection = $("#drinkSearch").val();
+    console.log("SEARCH", inputSelection);
+    // console.log("DRINK", drinkSelection);
+    //"rice,chinese,steak" search.val() + "," + foodSelection
+    //Recipe URL with cuisine selection API//
+    var drinkQuery = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + inputSelection;
+    console.log("QUERY", drinkQuery);
 
     $.ajax({
         type: "get",
         url: drinkQuery,
     }).then(function (response) {
         console.log(response);
-    })
+
+        // Displaying recipe card
+        $(".card").attr("class", "card");
+
+        for (var d = 0; d < response.drinks.length; d++) {
+            console.log("RAND DRINK", response.drinks[d]);
+            // Drink Content with Measurements/Units
+            var showDrinkTitle = $("<h2>").text(response.drinks[d].strDrink);
+            var showDrinkImage = $("<img>").attr("src", response.drinks[d].strDrinkThumb);
+            var showDrinkIngred1 = $("<p>").text(response.drinks[d].strIngredient1 + " - " + response.drinks[d].strMeasure1);
+            var showDrinkIngred2 = $("<p>").text(response.drinks[d].strIngredient2 + " - " + response.drinks[d].strMeasure2);
+            var showDrinkIngred3 = $("<p>").text(response.drinks[d].strIngredient3 + " - " + response.drinks[d].strMeasure3);
+            var showDrinkIngred4 = $("<p>").text(response.drinks[d].strIngredient4 + " - " + response.drinks[d].strMeasure4);
+            var showDrinkIngred5 = $("<p>").text(response.drinks[d].strIngredient5 + " - " + response.drinks[d].strMeasure5);
+            var showDrinkInstr = $("<p>").text(response.drinks[d].strInstructions);
+        
+
+            // Appending the data to html
+            $(".drinkshow").append(showDrinkTitle, showDrinkImage, showDrinkIngred1, showDrinkIngred2, showDrinkIngred3, showDrinkIngred4, showDrinkIngred5, showDrinkInstr);
+        }
+    });
+
 }
 
 

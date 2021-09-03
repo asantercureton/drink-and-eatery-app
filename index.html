@@ -9,9 +9,7 @@
   <title>Drinks and Eatery App</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@700&display=swap" rel="stylesheet">
+
   <!-- Compiled and minified JavaScript -->
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- LINK TO FOOD RECIPE API -->
@@ -19,51 +17,30 @@
 </head>
 
 <body>
-<header class="headerContainer">
-  <div class="hero-image">
-    <div class="hero-text">
+
   <h1 class="display">Drinks and Eatery</h1>
-  <p>Welcome to Drinks and Eatery. Help take the uncertanty out of your drink and dinning choices. Cook up a new meal or find a new cocktail to spice up the night</p>
-</div>
-</div>
   <div class="container">
-  </header>
+    <div class="row">
 
       <!--Food buttons-->
       <div class="col-lg-5 " id="foodborder">
         <h3 class="selections">Delicious Food Options</h3>
-        <form action="#">
-          <p>
-            <label>
-              <input name="select" type="radio" value="chinese"/>
-              <span>Chinese</span>
-            </label>
-          </p>
-          <p>
-            <label>
-              <input name="select" type="radio" value="indian" />
-              <span>Indian</span>
-            </label>
-          </p>
-          <p>
-            <label>
-              <input name="select" type="radio" value="mexican" />
-              <span>Mexcican</span>
-            </label>
-          </p>
-          <p>
-            <label>
-              <input name="select" type="radio" value="italian" />
-              <span>Italian</span>
-            </label>
-          </p>
-          <p>
-            <label>
-              <input name="select" type="radio" value="american" />
-              <span>American</span>
-            </label>
-          </p>
-        </form>
+        <input name="select" id="checkbox1" class="ads_Checkbox" type="radio" value="chinese" />
+        <label class="form-check-label">Chinese</label>
+        <br>
+        <input name="select" id="checkbox2" class="ads_Checkbox" type="radio" value="indian" />
+        <label class="form-check-label">Indian</label>
+        <br>
+        <input name="select" id="checkbox3" class="ads_Checkbox" type="radio" value="mexican" />
+        <label class="form-check-label">Mexican</label>
+        <br>
+        <input name="select" id="checkbox4" class="ads_Checkbox" type="radio" value="italian" />
+        <label class="form-check-label">Italian</label>
+        <br>
+        <input name="select" id="checkbox5" class="ads_Checkbox" type="radio" value="american" />
+        <label class="form-check-label">American</label>
+        <br>
+        <br>
         <input id="siteSearch" type="search" placeholder="Search Ingredients"></input>
         <!--"get recipe"-->
         <input type="button" id="save_value" name="save_value" value="Get Recipe" />
@@ -93,32 +70,9 @@
         <input type="button" id="drink-btn" name="drink-btn" value="Get Drink" />
       </div>
 
+      <div class="foodshow"></div>
+      <div class="drinkshow"></div>
 
-      <div class="row">
-        <div class="col-lg-5" id="card">
-          <!--Recipe card displaying link to recipe-->
-          <div class="card remove">
-            <img src="" class="card-img-top" alt="Food">
-            <div class="card-body">
-              <h5 class="card-title">card</h5>
-              <p class="card-text"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-5" id="card">
-          <!--Drink card displaying link to drink-->
-          <div class="card remove">
-            <img src="" class="card-img-top" alt="Drink">
-            <div class="card-body">
-              <h5 class="card-title">card</h5>
-              <p class="card-text"></p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!--Linking jquery and script file-->
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
