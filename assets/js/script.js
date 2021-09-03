@@ -5,6 +5,7 @@ console.log(inputVal)
 
 //Food recipe function//
 function getRecipe() {
+    event.preventDefault();
     //Getting the value of the user specified food selection//
     var cuisineSelection = $("input[name=select]:checked").val();
     var querySelection = $("input[type=search").val();
@@ -31,7 +32,7 @@ function getRecipe() {
 
         // var randFood = Math.floor((Math.random() * response.hits.length));
         for (var a = 0; a < response.hits.length; a++) {
-            console.log("RAND FOOD", response.hits[a]);
+            // console.log("RAND FOOD", response.hits[a]);
             var showFoodTitle = $("<h2>").text(response.hits[a].recipe.label);
             var showFoodImage = $("<img>").attr("src", response.hits[a].recipe.image);
             var showFoodIng = $("<p>").text(response.hits[a].recipe.ingredientLines);
@@ -43,6 +44,13 @@ function getRecipe() {
             }
             // Append food content
             $(".foodshow").append(showFoodTitle, showFoodImage, showFoodYield, showFoodIng);
+
+             // Set past food searches to localStorage
+             var pastFood = JSON.stringify(queryURLrec);
+             localStorage.setItem("PastFood", pastFood);
+             console.log(localStorage.getItem("PastFood"));
+             
+            // Append drink localStorage to html
 
 
             //Getting recipe title on the page and appending the card//
@@ -104,6 +112,14 @@ function getDrink() {
 
             // Appending the data to html
             $(".drinkshow").append(showDrinkTitle, showDrinkImage, showDrinkIngred1, showDrinkIngred2, showDrinkIngred3, showDrinkIngred4, showDrinkIngred5, showDrinkInstr);
+
+
+            // Set past drink searches to localStorage
+            var pastDrink = JSON.stringify(drinkQuery);
+            localStorage.setItem("PastDrink", pastDrink);
+            console.log(localStorage.getItem("PastDrink"));
+
+            // Append drink localStorage to html
         }
     });
 
