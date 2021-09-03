@@ -34,11 +34,15 @@ Below is a screenshot of the project:
 
 ![Image of html](./assets/images/drink-eat1.jpg)
 
+
 ![Image of html](./assets/images/screenshot2.png)
 
 ![Image of html](./assets/images/screenshot3.png)
 
 ![Image of html](./assets/images/screenshot4.png)
+=======
+![Image of html](./assets/images/screenshot.png)
+
 
 
 ---
