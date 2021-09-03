@@ -4,15 +4,25 @@
 Drink And Eatery App
 
 
+## Contributors
+Asante Cureton
+
+Ariell Scott
+
+Lucy Onoh
+
+Bilal Alboga
+
+
 ## Description
-<!-- Designed a clean professional web portfolio using html and css to display About Me, Workk, Contact Me and Resume information. -->
+Designed a clean professional web application to allow food and drink novices to search for unique and creative recipes to broaden their horizon.
 
 
 ## Links
-<!-- [Source Code](https://github.com/asantercureton/personal-portfolio/)
+[Source Code](https://github.com/asantercureton/drink-and-eatery-app/)
 
 
-[Description Link](https://asantercureton.github.io/personal-portfolio/) -->
+[Description Link](https://asantercureton.github.io/drink-and-eatery-app/)
 
 
 ## Usage
