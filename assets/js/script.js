@@ -5,6 +5,7 @@ console.log(inputVal)
 
 //Food recipe function//
 function getRecipe() {
+    event.preventDefault();
     //Getting the value of the user specified food selection//
     var cuisineSelection = $("input[name=select]:checked").val();
     var querySelection = $("input[type=search").val();
@@ -47,9 +48,16 @@ function getRecipe() {
              // Set past food searches to localStorage
              var pastFood = JSON.stringify(queryURLrec);
              localStorage.setItem("PastFood", pastFood);
+
+             console.log(localStorage.getItem("PastFood"));
+             
+            // Append drink localStorage to html
+
+
              console.log("locStor Food",localStorage);
 
              // NEXT: Append food localStorage to html
+
 
             //Getting recipe title on the page and appending the card//
             $(".card-title").html(response.hits[a].recipe.label);
@@ -111,6 +119,15 @@ function getDrink() {
             // Appending the data to html
             $(".drinkshow").append(showDrinkTitle, showDrinkImage, showDrinkIngred1, showDrinkIngred2, showDrinkIngred3, showDrinkIngred4, showDrinkIngred5, showDrinkInstr);
 
+
+
+            // Set past drink searches to localStorage
+            var pastDrink = JSON.stringify(drinkQuery);
+            localStorage.setItem("PastDrink", pastDrink);
+            console.log(localStorage.getItem("PastDrink"));
+
+            // Append drink localStorage to html
+
             // Set past drink searches to localStorage
             var pastDrink = JSON.stringify(drinkQuery);
             localStorage.setItem("PastDrink", pastDrink);
@@ -118,6 +135,7 @@ function getDrink() {
 
             // NEXT: Append drink localStorage to html
             
+
         }
     });
 
