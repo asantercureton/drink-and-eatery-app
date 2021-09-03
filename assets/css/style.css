@@ -84,15 +84,13 @@ background-color: #a5a58d;
 
 }
 .content-wrapper {
-    /* These styles are required for the "scroll-over" effect */
     position: absolute;
-    
-    top: 87%;
+    top: 50%;
+    left: 0;
     width: 100%;
     min-height: 12%;
     z-index: 2;
     background: white;
-
 }
 
 /* We want to give the content area some more padding */
@@ -105,7 +103,7 @@ background-color: #a5a58d;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin: 2em 0 1em;
+    /* margin: 2em 0 1em; */
 }
 .card {
     /* Add shadows to create the "card" effect */
@@ -123,4 +121,5 @@ background-color: #a5a58d;
   .ribbon {
     background: #2d3e50;
     color: #aaa;
+    width: 100%;
 }

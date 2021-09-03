@@ -146,6 +146,7 @@ function getDrink() {
 
 $('#save_value').click(function () {
     getRecipe();
+    $(".contentWrapper").show()
 });
 
 //Function "Get Cocktail" button//
