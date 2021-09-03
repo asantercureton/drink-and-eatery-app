@@ -31,7 +31,7 @@ function getRecipe() {
 
         // var randFood = Math.floor((Math.random() * response.hits.length));
         for (var a = 0; a < response.hits.length; a++) {
-            console.log("RAND FOOD", response.hits[a]);
+            // console.log("RAND FOOD", response.hits[a]);
             var showFoodTitle = $("<h2>").text(response.hits[a].recipe.label);
             var showFoodImage = $("<img>").attr("src", response.hits[a].recipe.image);
             var showFoodIng = $("<p>").text(response.hits[a].recipe.ingredientLines);
