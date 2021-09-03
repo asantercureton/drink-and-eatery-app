@@ -10,6 +10,12 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+
+
   <!-- Compiled and minified JavaScript -->
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- LINK TO FOOD RECIPE API -->
@@ -18,67 +24,105 @@
 
 <body>
 
-  <h1 class="display">Drinks and Eatery</h1>
+  <header>
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+      <a class="pure-menu-heading" href="">Drinks and Eatery</a>
+      <div class="hero-image">
+        <h1 class="display">Drinks and Eatery</h1>
+      </div>
+    </div>
+  </header>
+
+  <div class="splash-container">
+    <div class="splash">
+      <h1 class="splash-head">Drinks and Eatery</h1>
+      <p class="splash-subhead">
+        Welcome to Drinks and Eatery, the one stop shop to for Cocktail recipes and food recieps. Do you often know a an
+        inguriedent you want to use but not sure the best way to use it? Well Drinks and Eatery have you covered.
+      </p>
+
+    </div>
+  </div>
+
   <div class="container">
-    <div class="row">
 
-      <!--Food buttons-->
-      <div class="col-lg-5 " id="foodborder">
-        <h3 class="selections">Delicious Food Options</h3>
-        <input name="select" id="checkbox1" class="ads_Checkbox" type="radio" value="chinese" />
-        <label class="form-check-label">Chinese</label>
-        <br>
-        <input name="select" id="checkbox2" class="ads_Checkbox" type="radio" value="indian" />
-        <label class="form-check-label">Indian</label>
-        <br>
-        <input name="select" id="checkbox3" class="ads_Checkbox" type="radio" value="mexican" />
-        <label class="form-check-label">Mexican</label>
-        <br>
-        <input name="select" id="checkbox4" class="ads_Checkbox" type="radio" value="italian" />
-        <label class="form-check-label">Italian</label>
-        <br>
-        <input name="select" id="checkbox5" class="ads_Checkbox" type="radio" value="american" />
-        <label class="form-check-label">American</label>
-        <br>
-        <br>
-        <input id="siteSearch" type="search" placeholder="Search Ingredients"></input>
-        <!--"get recipe"-->
-        <input type="button" id="save_value" name="save_value" value="Get Recipe" />
+    <!--Food buttons-->
+    <div class="content-wrapper">
+      <div class="content">
+        <h2 class="content-head is-center">Your recipe wonderland awaits</h2>
+        <div class="pure-g">
+          <div class="l-box pure-u-1-2 pure-u-md-1-2 pure-u-lg-1-4">
+            <div class="card">
+              <h3 class="content-subhead">Delicious Food Options</h3>
+              <form action="#">
+                <p>
+                  <label>
+                    <input name="select" type="radio" value="chinese" />
+                    <span>Chinese</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input name="select" type="radio" value="indian" />
+                    <span>Indian</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input name="select" type="radio" value="mexican" />
+                    <span>Mexcican</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input name="select" type="radio" value="italian" />
+                    <span>Italian</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input name="select" type="radio" value="american" />
+                    <span>American</span>
+                  </label>
+                </p>
+              </form>
+              <input id="siteSearch" type="search" placeholder="Search Ingredients"></input>
+              <!--"get recipe"-->
+              <input type="button" id="save_value" name="save_value" value="Get Recipe" />
+            </div>
+          </div>
+
+          <!--Drink buttons-->
+          <div class="l-box pure-u-1-2 pure-u-md-1-2 pure-u-lg-1-4">
+            <div class="card">
+              <h3 class="content-subhead">Tasty Drink Choices</h3>
+
+              <input id="drinkSearch" type="search" placeholder="Search Ingredients"></input>
+              <!--"get drink"-->
+              <input type="button" id="drink-btn" name="drink-btn" value="Get Drink" />
+            </div>
+          </div>
+
+        </div>
       </div>
+    </div>
+  </div>
 
-      <!--Drink buttons-->
-      <div class="col-lg-5 " id="foodborder">
-        <h3 class="selections">Tasty Drink Choices</h3>
-        <input name="select" id="checkbox6" class="ads_Checkbox" type="radio" value="chinese" />
-        <label class="form-check-label">Gin</label>
-        <br>
-        <input name="select" id="checkbox7" class="ads_Checkbox" type="radio" value="indian" />
-        <label class="form-check-label">Tequila</label>
-        <br>
-        <input name="select" id="checkbox8" class="ads_Checkbox" type="radio" value="mexican" />
-        <label class="form-check-label">Vodka</label>
-        <br>
-        <input name="select" id="checkbox9" class="ads_Checkbox" type="radio" value="italian" />
-        <label class="form-check-label">Cognac</label>
-        <br>
-        <input name="select" id="checkbox10" class="ads_Checkbox" type="radio" value="american" />
-        <label class="form-check-label">Whiskey</label>
-        <br>
-        <br>
-        <input id="drinkSearch" type="search" placeholder="Search Ingredients"></input>
-        <!--"get drink"-->
-        <input type="button" id="drink-btn" name="drink-btn" value="Get Drink" />
-      </div>
-
+  <div class="ribbon l-box-lrg pure-g">
+    <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
       <div class="foodshow"></div>
       <div class="drinkshow"></div>
-
-
-      <!--Linking jquery and script file-->
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-      <script src="assets/js/script.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
     </div>
+  </div>
+
+  <div class="history"></div>
+  </div>
+
+  <!--Linking jquery and script file-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </div>
 </body>
 </body>
